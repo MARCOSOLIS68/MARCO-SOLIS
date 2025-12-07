@@ -1,0 +1,110 @@
+---
+title: "Marco solis"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#CARGANDO LA DATA A TRABAJAR 
+data <-read.csv("C:/Users/Marco/Downloads/conoc_actit_factor_cancer_cervical.csv")
+```
+
+You can add options to executable code like this
+
+```{r}
+#LIMPIAR LA DATA DE UNA COLUMNA ESPECIFICA, QUE CONTENGA DATOS 
+data_limpia <-data[!is.na(data$Edad), ]
+```
+
+```{r}
+#INSTALAR PAQUETES
+
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+```{r}
+#histograma
+hist(data$edad,
+     main = "Histograma de Edad",
+     xlab = "Edad",
+     col = "lightblue",
+     border = "black")
+hist(data$conoc_actit_factor_cancer_cervical.csv"
+     main = "histograma de conoc_actit_factor_cancer_cervical.csv"
+     xlab = "conoc_actit_factor_cancer_cervical.csv",
+     col  = "lightgreer""
+     borders("black")
+     
+```
+
+```{r}
+#MEDIDAS DE TENDENCIA CENTRAL
+#MEDIA ARITMETICA
+mean(data$)
+    #MODA
+mode_Sexo<-names(sort(table(data$Sexo),decreasing = TRUE))
+mode_Edad<-names(sort(table(data$Edad),decreasing = TRUE))
+     
+```
+
+```{r}
+#MEDIANA
+median(data$Edad)
+     
+```
+
+```{r}
+#MEDIDAS DE DISPERSION
+var(data$Edad,na.rm = TRUE)
+```
+
+```{r}
+ #DESVIACION ESTANDAR
+sd(data$Edad,na.rm = TRUE)
+
+```
+
+```{r}
+#RANGO 
+range(data$Edad,na.rm = TRUE)
+     
+```
+
+```{r}
+#RANGO INTERCUARTILICO
+IQR(data$Edad,na.rm = TRUE)
+     
+```
+
+```{r}
+ #MEDIDAS DE POSICION
+     
+     
+#CUARTIL
+quantile(data$Edad,probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE)
+summary(data$Edad)
+```
+
+```{r}
+#CON TODAS LAS VARIABLES
+summary(data)
+     
+```
+
+```{r}
+ #TABLAS DE FRECUENCIA PARA VARIABLES CATEGORICAS
+     table(data$Sexo)
+     prop.table(table(data$Sexo))
+     table(data$Dias_Seguimiento)
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
